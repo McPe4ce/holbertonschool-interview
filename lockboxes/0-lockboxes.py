@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Module that checks if a box can unlock the next one"""
 
 def canUnlockAll(boxes):
     unlocked = set([0])
