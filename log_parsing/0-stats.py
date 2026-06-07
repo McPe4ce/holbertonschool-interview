@@ -22,6 +22,7 @@ if __name__ == "__main__":
                 file_size = int(file_size)
                 status_code = int(status_code)
                 total_size = total_size + file_size
+                
                 if status_code in valid_codes:
                     if status_code not in codes:
                         codes[status_code] = 0
