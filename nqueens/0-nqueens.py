@@ -10,6 +10,8 @@ def is_valid(queens, row, col):
 
 
 def solve(N, row, queens):
+    if N is None:
+        return False
     if row == N:
         print(queens)
         return
