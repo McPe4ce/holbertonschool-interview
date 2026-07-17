@@ -1,6 +1,26 @@
 #!/usr/bin/python3
+"""Module for solving the Prime Game."""
+
 
 def isWinner(x, nums):
+    """Determine who wins the most rounds of the prime game.
+
+    Maria and Ben alternate turns removing a prime number and all
+    its multiples from the set {1, ..., n}. The player unable to
+    move loses. The winner of a round is determined by the parity
+    of the count of primes <= n: a prime can only be removed by
+    being explicitly picked, so the number of turns in a round
+    always equals that count. An odd count means Maria (who moves
+    first) makes the last move, so she wins; an even count means
+    Ben wins.
+
+    Args:
+        x (int): the number of rounds played.
+        nums (list): the value of n for each round.
+
+    Returns:
+        str: "Maria" or "Ben" if one won more rounds, else None.
+    """
     if x == 0 or not nums:
         return None
 
