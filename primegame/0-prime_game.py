@@ -16,7 +16,8 @@ def isWinner(x, nums):
 
     Args:
         x (int): the number of rounds played.
-        nums (list): the value of n for each round.
+        nums (list): the value of n for each round; only the first
+            x elements are used.
 
     Returns:
         str: "Maria" or "Ben" if one won more rounds, else None.
@@ -24,7 +25,8 @@ def isWinner(x, nums):
     if x == 0 or not nums:
         return None
 
-    max_n = max(nums)
+    rounds = nums[:x]
+    max_n = max(rounds)
 
     is_prime = [True] * (max_n + 1)
     is_prime[0] = False
@@ -42,7 +44,7 @@ def isWinner(x, nums):
     maria = 0
     ben = 0
 
-    for n in nums:
+    for n in rounds:
         prime_count = primes_up_to[n]
         if prime_count % 2 == 1:
             maria += 1
